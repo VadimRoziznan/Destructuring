@@ -1,5 +1,4 @@
-export default class Character {
-  constructor() {
+export function character() {
     this.name = 'Лучник'; 
     this.type = 'Bowman';
     this.health = 50;
@@ -20,22 +19,21 @@ export default class Character {
         // <- обратите внимание, описание "засекречено"
       }
     ]	
-  }
-
-  attackOption() {
-    const changedAttackProperties = new Array;
-
-    for (const prop in this.special) {
-      if ('description' in this.special[prop]) {
-        changedAttackProperties.push(this.special[prop])
-      }
-      else {
-        this.special[prop].description = 'Описание недоступно'
-        changedAttackProperties.push(this.special[prop])
-      }
-      
-    }
-    return changedAttackProperties
-  }
-
 }
+
+export function attackOption(obj) {
+  const changedAttackProperties = new Array;
+
+  for (const prop in obj.special) {
+    if ('description' in obj.special[prop]) {
+      changedAttackProperties.push(obj.special[prop])
+    }
+    else {
+      obj.special[prop].description = 'Описание недоступно'
+      changedAttackProperties.push(obj.special[prop])
+    }
+    
+  }
+  return changedAttackProperties
+}
+

@@ -1,11 +1,22 @@
-import Character from "../js/class/character.js";
+import { character, attackOption } from "../js/class/character";
 
 test('Object test Character', () => {
-  const patric = new Character().attackOption();
+  const SpongeBob = new character();
 
-  patric.forEach(obj => {
-    const objKeys = Object.keys(obj);
-    expect(objKeys).toHaveLength(4);
-  });
+  const correct = [
+      {
+        id: 8,
+        name: 'Двойной выстрел',
+        icon: 'http://...',
+        description: 'Двойной выстрел наносит двойной урон'
+      }, 
+      {
+        id: 9,
+        name: 'Нокаутирующий удар',
+        icon: 'http://...',
+        description: 'Описание недоступно'
+      }
+    ]	
 
+  expect(attackOption(SpongeBob)).toEqual(correct);
 });

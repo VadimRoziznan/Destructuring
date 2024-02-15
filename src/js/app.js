@@ -1,5 +1,6 @@
-import Cheractor from "./class/character.js"
+import { character, attackOption } from "./class/character"
 
-const person = Cheractor
+const person = new character;
+const attackOptionPerson = attackOption(person);
 
-console.log(person)
+console.log(attackOptionPerson);
